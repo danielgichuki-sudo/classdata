@@ -5,7 +5,7 @@ FILENAME=$(hostname)
 echo "Disk report saved to $FILENAME.report"
 
 lvscan >$FILENAME.report
-Vgscan >>$FILENAME.report
+vgscan >>$FILENAME.report
 pvscan >>$FILENAME.report
 lsblk >>$FILENAME.report
 df -hT | grep -v tmp >>$FILENAME.report
