@@ -1,1 +1,11 @@
-#!/bin/bash'n#This script creates a report of our disk configuration'n'nFILENAME=$(hostname)'necho "Disk report saved to $FILENAME.report1"'n'nlvscan >$FILENAME.report1'nvgscan >>$FILENAME.report1'npvscan >>$FILENAME.report1'nlsblk >>$FILENAME.report1'ndf -hT | grep -v tmp >>$FILENAME.report1
+#!/bin/bash
+#This script creates a report of our disk configuration
+
+FILENAME=$(hostname)
+echo "Disk report saved to $FILENAME.report1"
+
+nlvscan >$FILENAME.report1
+vgscan >>$FILENAME.report1
+pvscan >>$FILENAME.report1
+lsblk >>$FILENAME.report1
+df -hT | grep -v tmp >>$FILENAME.report1
